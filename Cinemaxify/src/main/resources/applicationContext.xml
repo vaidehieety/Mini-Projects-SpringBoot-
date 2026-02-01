@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    Define the bean id with camelCase Format -->
+<!--    Example My class name is Self then camelCase name would be self -->
+<bean id="normalPlan" class="com.example.Cinemaxify.NormalPlan"/>
+<bean id="premiumPlan" class="com.example.Cinemaxify.PremiumPlan"/>
+
+<bean id="selfNormal" class="com.example.Cinemaxify.Self">
+    <property name="plan" ref="normalPlan"></property>
+</bean>
+
+<bean id="selfPremium" class="com.example.Cinemaxify.Self">
+    <property name="plan" ref="premiumPlan"></property>
+</bean>
+
+<bean id="spouseNormal" class="com.example.Cinemaxify.Spouse">
+    <property name="plan" ref="normalPlan"></property>
+</bean>
+
+<bean id="spousePremium" class="com.example.Cinemaxify.Spouse">
+    <property name="plan" ref="premiumPlan"></property>
+</bean>
+
+</beans>

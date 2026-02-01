@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <!-- singleton ensures only reference is sent -->
+    <bean id ="simplePostList" class="com.learn.SocialMediaApp.SimplePostList" scope="singleton" init-method="init"
+     destroy-method="destroy"></bean> 
+    
+    <!-- prototype ensures a new reference to object is sent everytime -->
+    <bean id="simplePost" class="com.learn.SocialMediaApp.SimplePost" scope="prototype" init-method="init"
+     destroy-method="destroy"></bean>
+    
+    <bean id="simpleUser" class="com.learn.SocialMediaApp.SimpleUser" init-method="init">
+    <property name="postList" ref="simplePostList"></property>
+    </bean>
+</beans>
